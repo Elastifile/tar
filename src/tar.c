@@ -1949,6 +1949,10 @@ parse_opt (int key, char *arg, struct argp_state *state)
       to_command_option = arg;
       break;
 
+    case EXTRACT_NON_REGULAR_OPTION:
+      extract_non_regular = 1;
+      break;
+
     case TOTALS_OPTION:
       if (arg)
 	set_stat_signal (arg);

@@ -654,7 +654,7 @@ oct_to_env (char const *envar, unsigned long num)
 }
 
 static void
-str_to_env (char const *envar, char const *str)
+ str_to_env (char const *envar, char const *str)
 {
   if (str)
     {
