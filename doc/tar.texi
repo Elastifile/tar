@@ -3539,10 +3539,19 @@ Reads the volume label.  If an argument is specified, test whether it
 matches the volume label.  @xref{--test-label option}.
 
 @opsummary{to-command}
+@anchor{--to-command option}
 @item --to-command=@var{command}
 
 During extraction @command{tar} will pipe extracted files to the
 standard input of @var{command}.  @xref{Writing to an External Program}.
+
+@opsummary{extract-non-regular}
+@item --extract-non-regular
+
+If @xref{--to-command option} is defined, perform a normal extract for all
+non regular files (directories, soft links, etc.) entities. Without this
+option, non regular files are ignored when @xref{--to-command option} is
+used.
 
 @opsummary{to-stdout}
 @item --to-stdout
@@ -6209,7 +6218,8 @@ for more detail).
 
 Notice, that @var{command} is executed once for each regular file
 extracted.  Non-regular files (directories, etc.)@: are ignored when this
-option is used.
+option is used unless the @option{--extract-non-regular} option is used, where the non
+regular files are extracted as usual. 
 @end table
 
 The command can obtain the information about the file it processes

@@ -315,12 +315,13 @@ GLOBAL bool touch_option;
 
 GLOBAL char *to_command_option;
 GLOBAL bool ignore_command_error_option;
+GLOBAL bool extract_non_regular;
 
 /* Restrict some potentially harmful tar options */
 GLOBAL bool restrict_option;
 
 /* Return true if the extracted files are not being written to disk */
-#define EXTRACT_OVER_PIPE (to_stdout_option)
+#define EXTRACT_OVER_PIPE (to_stdout_option || (to_command_option && !extract_non_regular))
 
 /* Count how many times the option has been set, multiple setting yields
    more verbose behavior.  Value 0 means no verbosity, 1 means file name

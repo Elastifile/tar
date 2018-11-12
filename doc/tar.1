@@ -373,6 +373,11 @@ Verify the archive after writing it.
 .TP
 Ignore subprocess exit codes.
 .TP
+\fB\-\-extract\-non\-regular\fR
+Force standrd extract method for non regular files even if 
+\fB\-\-to\-command\fR option is used. By default non regular files
+are ignored when the \fB\-\-to\-command\fR option is used.
+.TP
 \fB\-\-no\-ignore\-command\-error\fR
 Treat non-zero exit codes of children as error (default).
 .TP
@@ -400,7 +405,9 @@ Type of the file. It is a single letter with the following meaning:
 	c	Character device
 .fi
 
-Currently only regular files are supported.
+Currently only regular files are supported (i.e. they are ignored).
+You can force standard extract method for non-regular files using
+the \fB\-\-extract\-non\-regular\fR option.
 .TP
 .B TAR_MODE
 File mode, an octal number.

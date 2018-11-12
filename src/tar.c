@@ -278,6 +278,7 @@ enum
   CHECKPOINT_ACTION_OPTION,
   CLAMP_MTIME_OPTION,
   DELAY_DIRECTORY_RESTORE_OPTION,
+  EXTRACT_NON_REGULAR_OPTION,
   HARD_DEREFERENCE_OPTION,
   DELETE_OPTION,
   FORCE_LOCAL_OPTION,
@@ -493,6 +494,8 @@ static struct argp_option options[] = {
 
   {"to-stdout", 'O', 0, 0,
    N_("extract files to standard output"), GRID+1 },
+  {"extract-non-regular", EXTRACT_NON_REGULAR_OPTION, 0, 0,
+   N_("if to-command option is used, extract non regular files as usual"), GRID+1 },
   {"to-command", TO_COMMAND_OPTION, N_("COMMAND"), 0,
    N_("pipe extracted files to another program"), GRID+1 },
   {"ignore-command-error", IGNORE_COMMAND_ERROR_OPTION, 0, 0,
